@@ -16,8 +16,9 @@ padding-left: 4px;
     float: right;
    
 }
-.pass input{
+..pass input{
     background-color: #222831;
+    color: rgb(240, 236, 236);
 }
 
 .center
