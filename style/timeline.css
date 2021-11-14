@@ -1,9 +1,9 @@
 
-        #blue_bar
+         #blue_bar
         {
             height: 50px;
             background-color: #3c5a99; 
-            color: #d9dfeb;
+            color: #fcfcfc;
         }
         #search_box
         {
@@ -37,7 +37,7 @@
         {
             
              min-height: 400px;
-            color: #405d9b;
+            color: #f7f9ff;
             padding: 8px;
             margin-top: 20px;
             font-weight: bold;
