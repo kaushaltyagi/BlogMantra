@@ -1,8 +1,11 @@
-#top
+ body{
+            background-color: #14171b;
+        }
+        #top
 {
 height:100px ;
 background-color: #3c5a99; 
-color: #d9dfeb; 
+color: white; 
 padding-left: 4px;
 }
 #signup
@@ -16,15 +19,18 @@ padding-left: 4px;
     float: right;
    
 }
+.pass input{
+    background-color: #222831;
+}
 
 .center
 {
-    background-color: white;
+    background-color: #2f3742; 
     width: 420px;
-    
     margin: auto;
     margin-top: 50px;
     text-align: center;
+    border-radius: 1%;
 }
 #text
 {
@@ -37,7 +43,7 @@ padding-left: 4px;
 }
 #button
 {
-    width: 300px;
+    width: 305px;
     height: 40px;
     border:none ;
     font-weight: bold;
@@ -45,4 +51,7 @@ padding-left: 4px;
     background-color: #3c5a99;
     
     color: white;
+}
+h3{
+    color: rgb(182, 205, 248);
 }
