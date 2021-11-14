@@ -1,3 +1,36 @@
+<?php
+
+    include ("classes/connect.php");
+    include ("classes/login.php");
+
+
+    $email = "" ;
+    $password = "" ;
+
+    if ($_SERVER['REQUEST_METHOD']=='POST')
+    {
+        $login = new login();
+        $result = $login->evaluate($_POST);
+        if ($result != "")
+        {
+            echo "<div style ='text-align:center;font-size:12px;color:white;background-color:grey'>";
+            echo "FOLLOWING ERRORS OCURED <br>";
+            echo $result;
+            echo "</div>";
+        }
+        else
+        {
+            header("Location: profile.php");
+            die;
+        }
+        
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+    }
+   
+    
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +55,11 @@
         <form action="#" method="post">
             
             <div class="pass">
-                <input id="text" type="text" value="" placeholder="  Email address or Phone number">   
+                <input id="text" type="text" value="<?php echo $email ?>" placeholder="  Email address or Phone number">   
             </div>
             
             <div class="pass">
-                <input id="text" type="password" value="" placeholder="  Password">
+                <input id="text" type="password"  placeholder="  Password">
             </div>
             
             <input type="submit" value="Log In" id="button">

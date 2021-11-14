@@ -24,12 +24,14 @@
             header("Location: login.php");
             die;
         }
+
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email'];
     }
    
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
+    
     
 ?>
 
