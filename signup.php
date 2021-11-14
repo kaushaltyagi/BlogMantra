@@ -19,6 +19,11 @@
             echo $result;
             echo "</div>";
         }
+        else
+        {
+            header("Location: login.php");
+            die;
+        }
     }
    
     $fname = $_POST['fname'];

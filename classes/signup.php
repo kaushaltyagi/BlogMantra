@@ -12,20 +12,38 @@ class signup
                 $this->error =$this->error. $key." is empty!<br>";
 
             }
+
+
+            // to check if lname is not numeric
             if ($key == 'lname')
             {
-                if (is_numeric($value))
+                if (is_numeric($value) )
                 {
 
                 $this->error =$this->error." last name cant be number !<br>";
                 }
+
+                if (strstr($value, " ") )
+                {
+
+                $this->error =$this->error." last name cant have space!<br>";
+                }
+
             }
+
+            // to check if fname is not numeric
             if ($key == 'fname')
             {
                 if (is_numeric($value))
                 {
 
                 $this->error =$this->error." first name cant be number !<br>";
+                }
+
+                if (strstr($value, " ") )
+                {
+
+                $this->error =$this->error." first name cant have space!<br>";
                 }
             }
         }
@@ -43,8 +61,8 @@ class signup
     public function create_user($data)
     {
         
-        $fname = $data['fname'];
-        $lname = $data['lname'];
+        $fname =ucfirst( $data['fname']);
+        $lname =ucfirst( $data['lname']);
         $gender = $data['gender'];
         $email = $data['email'];
         $password = $data['password'];
@@ -67,7 +85,7 @@ class signup
     private function create_userid()
     {
        $length = rand (4,19);
-       $number = "";
+       $number = "12345";
        for ($i = 0; $i < $length; $i++ )
        {
            $new_rand = rand(0,9);
