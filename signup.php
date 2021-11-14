@@ -52,17 +52,18 @@
         </div>
         <form action="signup.php" method="post">
             <div class="fullname">
-                <input name="fname" class="textbox1" type="text" value="<?php echo $fname ?>" placeholder="First Name"> 
-                <input name="lname" class="textbox1" type="text" value="<?php echo $lname ?>" placeholder="Last Name"> <br>
+                <input name="fname" class="textbox1" type="text" value="<?php echo $fname ?>" placeholder=" First Name"> 
+                <input name="lname" class="textbox1" type="text" value="<?php echo $lname ?>" Last Name"> <br>
            
-
-                Gender: <select class="textbox" name="gender" value="<?php echo $gender ?>">
+            </div>
+            <div class="gender"> 
+                 Gender : <select class="textbox" value="<?php echo $gender ?>" name="gender">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select> <br>
                 
-            
+                </div>
             
                 <input name="email" class="textbox3" type="email" value="" placeholder=" Email address or Phone number">   <br>
             
