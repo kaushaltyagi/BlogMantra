@@ -2,7 +2,7 @@
 {
 height:100px ;
 background-color: #3c5a99; 
-color: #d9dfeb; 
+color: #f5f6f7; 
 padding-left: 4px;
 }
 
@@ -16,16 +16,20 @@ padding-left: 4px;
     float: right;
    
 }
+h3{
+    margin-top: 10px;
+    color: rgb(214, 214, 214);
+}
 
 
 .center{
 position:sticky;
 text-align: center;
-background: white;
+background-color: #2f3742; 
 margin: auto;
 margin-top: 50px;
 width: 420px;
-border-radius: 10px;
+border-radius: 2%;
 padding: 15px;
 
 
@@ -42,13 +46,17 @@ border-radius: 5px;
 border: none;
 
 }
-
+.gender{
+    color: rgb(228, 226, 226);
+}
 
 .textbox
 {
 border-radius: 4px;
     margin-bottom: 12px;
     border: solid 1px #ccc;
+    background-color: #222831;
+    color: rgb(214, 214, 214);
 width: 260px;
 height: 30px;
 }
@@ -59,6 +67,9 @@ margin-bottom: 12px;
 border: solid 1px #ccc;
 width: 310px;
 height: 30px;
+background-color: #222831;
+    color: rgb(240, 236, 236);
+
 }
 .textbox1
 {
@@ -67,4 +78,6 @@ border-radius: 4px;
     border: solid 1px #ccc;
 width: 150px;
 height: 30px;
+background-color: #222831;
+    color: rgb(240, 236, 236);
 }
