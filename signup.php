@@ -19,7 +19,7 @@
 
 
 
-<body style="background-color: #e9ebee;">
+<body style="background-color: #222831">
     <div id="top">
         <div  style="font-size: 40px;">Blog-Mantra</div>
         <div  id="signup">Log-In</div>
@@ -33,11 +33,12 @@
         </div>
         <form action="signup.php" method="post">
             <div class="fullname">
-                <input name="fname" class="textbox1" type="text" value="" placeholder="First Name"> 
-                <input name="lname" class="textbox1" type="text" value="" placeholder="Last Name"> <br>
+                <input name="fname" class="textbox1" type="text" value="" placeholder=" First Name"> 
+                <input name="lname" class="textbox1" type="text" value="" placeholder=" Last Name"> <br>
            
-
-                Gender: <select class="textbox" name="gender">
+            </div>
+            <div class="gender"> 
+                 Gender : <select class="textbox" name="gender">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
@@ -45,17 +46,17 @@
                 
             
             
-                <input name="email" class="textbox3" type="email" value="" placeholder="Email address or Phone number">   <br>
+                <input name="email" class="textbox3" type="email" value="" placeholder=" Email address or Phone number">   <br>
             
            
-                <input name="password" class="textbox3" type="password" value="" placeholder="Password"> <br>
+                <input name="password" class="textbox3" type="password" value="" placeholder=" Password"> <br>
             
             
-                <input name="password2" class="textbox3" type="password" value="" placeholder="Retype Password"> <br>
+                <input name="password2" class="textbox3" type="password" value="" placeholder=" Re-Enter Password"> <br>
             
             <input type="submit" value="Sign Up" id="submit">
 
-            
+            <br><br>
          
         </form>
     </div>
