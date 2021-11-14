@@ -1,12 +1,31 @@
 <?php
 
-    
+    include ("classes/connect.php");
+    include ("classes/signup.php");
+
+    $fname = "" ;
+    $lname = "" ;
+    $gender = "" ;
+    $email = "" ;
+
     if ($_SERVER['REQUEST_METHOD']=='POST')
     {
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
+        $signup = new signup();
+        $result = $signup->evaluate($_POST);
+        if ($result != "")
+        {
+            echo "<div style ='text-align:center;font-size:12px;color:white;background-color:grey'>";
+            echo "FOLLOWING ERRORS OCURED <br>";
+            echo $result;
+            echo "</div>";
+        }
     }
+   
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +52,11 @@
         </div>
         <form action="signup.php" method="post">
             <div class="fullname">
-                <input name="fname" class="textbox1" type="text" value="" placeholder=" First Name"> 
-                <input name="lname" class="textbox1" type="text" value="" placeholder=" Last Name"> <br>
+                <input name="fname" class="textbox1" type="text" value="<?php echo $fname ?>" placeholder="First Name"> 
+                <input name="lname" class="textbox1" type="text" value="<?php echo $lname ?>" placeholder="Last Name"> <br>
            
-            </div>
-            <div class="gender"> 
-                 Gender : <select class="textbox" name="gender">
+
+                Gender: <select class="textbox" name="gender" value="<?php echo $gender ?>">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
