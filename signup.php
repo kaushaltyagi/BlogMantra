@@ -65,7 +65,7 @@
                 
                 </div>
             
-                <input name="email" class="textbox3" type="email" value="<?php echo $email ?>" placeholder=" Email address or Phone number">   <br>
+                <input name="email"  class="textbox3" type="email" value="<?php echo $email ?>"  placeholder=" Email address or Phone number">   <br>
             
            
                 <input name="password" class="textbox3" type="password" value="" placeholder=" Password"> <br>

@@ -12,6 +12,22 @@ class signup
                 $this->error =$this->error. $key." is empty!<br>";
 
             }
+            if ($key == 'lname')
+            {
+                if (is_numeric($value))
+                {
+
+                $this->error =$this->error." last name cant be number !<br>";
+                }
+            }
+            if ($key == 'fname')
+            {
+                if (is_numeric($value))
+                {
+
+                $this->error =$this->error." first name cant be number !<br>";
+                }
+            }
         }
         if ($this->error == "")
         {
@@ -34,16 +50,16 @@ class signup
         $password = $data['password'];
 
         $url =strtolower( $fname). ".".strtolower($lname);
-        $userid = this->create_userid();
+        $userid = $this->create_userid();
 
         $query = "insert into users
         (userid,fname,lname,gender,email,password,url) 
         values 
         ('$userid','$fname','$lname','$gender','$email','$password','$url')";
         
-        return $query;
-        // $DB= new database();
-        // $DB->save($query);
+       
+         $DB= new database();
+        $DB->save($query);
 
     }
    
