@@ -38,7 +38,7 @@
 
 
 
-<body style="background-color: #e9ebee;">
+<body style="background-color: #222831">
     <div id="top">
         <div  style="font-size: 40px;">Blog-Mantra</div>
         <div  id="signup">Log-In</div>
@@ -64,17 +64,17 @@
                 
             
             
-                <input name="email" class="textbox3" type="email" value="" placeholder="Email address or Phone number">   <br>
+                <input name="email" class="textbox3" type="email" value="" placeholder=" Email address or Phone number">   <br>
             
            
-                <input name="password" class="textbox3" type="password" value="" placeholder="Password"> <br>
+                <input name="password" class="textbox3" type="password" value="" placeholder=" Password"> <br>
             
             
-                <input name="password2" class="textbox3" type="password" value="" placeholder="Retype Password"> <br>
+                <input name="password2" class="textbox3" type="password" value="" placeholder=" Re-Enter Password"> <br>
             
             <input type="submit" value="Sign Up" id="submit">
 
-            
+            <br><br>
          
         </form>
     </div>
