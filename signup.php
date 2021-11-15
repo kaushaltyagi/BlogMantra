@@ -48,7 +48,7 @@
 <body style="background-color: #222831">
     <div id="top">
         <div  style="font-size: 40px;">Blog-Mantra</div>
-        <div  id="signup">Log-In</div>
+        <a href="login.php"><div  id="signup" style="color:white";>Log-In</div></a>
     </div>
 
 
@@ -60,11 +60,12 @@
         <form action="signup.php" method="post">
             <div class="fullname">
                 <input name="fname" class="textbox1" type="text" value="<?php echo $fname ?>" placeholder=" First Name"> 
-                <input name="lname" class="textbox1" type="text" value="<?php echo $lname ?>" Last Name"> <br>
+                <input name="lname" class="textbox1" type="text" value="<?php echo $lname ?>" placeholder=" Last Name"> <br>
            
             </div>
             <div class="gender"> 
                  Gender : <select class="textbox" value="<?php echo $gender ?>" name="gender">
+                 <option value="nil"> </option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>

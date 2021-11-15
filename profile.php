@@ -1,3 +1,43 @@
+<?php
+session_start();
+
+include ("classes/connect.php");
+include ("classes/login.php");
+include ("classes/user.php");
+
+if (isset($_SESSION['blog_userid']) && is_numeric($_SESSION['blog_userid']))
+{
+    $id = $_SESSION['blog_userid'];
+    $login = new login();
+    $result = $login->check_login($id);
+
+    if ($result)
+    {
+        $user = new User();
+        $user_data = $user -> get_data($id);
+
+        if(!$user_data)
+        {
+            header ("Location:login.php");
+            die; 
+        }
+        
+    }
+    else
+    {
+       header ("Location:login.php");
+        die; 
+    }
+}
+else
+{
+    header ("Location:login.php");
+        die;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +54,10 @@
             <input type="text" id="search_box" placeholder="Search for Writers">
             
             <img src="./assets/kaushik.jpg" style="width: 50px;float: right; border-radius: 50px;">
+            
+            <a href ="logout.php">
+                <span style="color:white; font-size:12px; float:right; margin:18px;">  Logout</span>
+            </a>
         </div>
     </div>
 
@@ -25,7 +69,7 @@
             <img src="./assets/mountain.jpg" style="width: 100%; max-height: 290px;">
             <img src="./assets/kaushik.jpg" id="profile_pic">
             <br>
-            <div style="font-size: 20px;"> Kaushik Kumar Giri</div>
+            <div style="font-size: 20px;"> <?php echo $user_data['fname']." ". $user_data['lname'];  ?></div>
            
             <br>
             <div id="menu_button">Timeline</div>

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
     include ("classes/connect.php");
     include ("classes/login.php");
 
@@ -43,7 +45,7 @@
 <body style="background-color: #222831">
     <div id="top">
         <div style="font-size: 40px;">Blog-Mantra</div>
-        <div id="signup">Signup</div>
+        <a href="signup.php"><div id="signup" style="color:white";>Signup</div></a>
     </div>
 
 
@@ -52,14 +54,14 @@
         <div id="loginname" style="padding: 18px;">
             <h3>Log in to Blog-Mantra</h3>
         </div>
-        <form action="#" method="post">
+        <form  method="post">
             
             <div class="pass">
-                <input id="text" type="text" value="<?php echo $email ?>" placeholder="  Email address or Phone number">   
+                <input id="text" name="email" type="text" value="<?php echo $email ?>" placeholder="  Email address or Phone number">   
             </div>
             
             <div class="pass">
-                <input id="text" type="password"  placeholder="  Password">
+                <input id="text" name="password"  type="password"  placeholder="  Password">
             </div>
             
             <input type="submit" value="Log In" id="button">
