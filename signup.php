@@ -2,7 +2,7 @@
 
     include ("classes/connect.php");
     include ("classes/signup.php");
-    //classes
+    
     $fname = "" ;
     $lname = "" ;
     $gender = "" ;
