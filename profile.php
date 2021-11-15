@@ -4,6 +4,7 @@ session_start();
 include ("classes/connect.php");
 include ("classes/login.php");
 include ("classes/user.php");
+include ("classes/post.php");
 
 if (isset($_SESSION['blog_userid']) && is_numeric($_SESSION['blog_userid']))
 {
@@ -34,6 +35,19 @@ else
     header ("Location:login.php");
         die;
 }
+
+
+
+            // below this we have code for possting
+    
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        $post = new post();
+        $id = $_SESSION['blog_userid'];
+
+        $result = $post->create_post( $id , $_POST );
+
+    }
 
 
 ?>
@@ -123,9 +137,11 @@ else
                 <!-- write something here -->
             <div style="min-height: 400px; flex:2.5;padding: 20px; padding-right: 0px;">
                     <div style="background-color: white; border: solid 1px #aaa; padding: 10px;">
-                        <textarea placeholder = "Do You Wanna Share Something?"></textarea>
-                        <input id="post_button" value="Post" type="submit" >
-                        <br>
+                        <form  method="post">
+                            <textarea name = "post" placeholder = "Do You Wanna Share Something?"></textarea>
+                            <input id="post_button" value="Post" type="submit" >
+                            <br>
+                        </form>
                     </div>
                     <a href target=""></a>
                     <!-- main post bar -->

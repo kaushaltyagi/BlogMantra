@@ -85,7 +85,7 @@ class signup
     private function create_userid()
     {
        $length = rand (4,19);
-       $number = "12345";
+       $number = "";
        for ($i = 0; $i < $length; $i++ )
        {
            $new_rand = rand(0,9);
