@@ -58,7 +58,7 @@ else
     <title>Profile | Blog-Mantra</title>
 </head>
     <link rel="stylesheet" href="./style/profile.css">
-<body style="font-family: Tahoma, Geneva, Verdana, sans-serif; background-color: #d0d8e4;">
+<body style="font-family: Tahoma, Geneva, Verdana, sans-serif; background-color: #222831;">
     
     <!-- top bar -->
    
@@ -79,7 +79,7 @@ else
 
     <div id="cover_area" >
 
-        <div style="background-color: white; text-align: center;color: #405d9b;">
+        <div style="background-color: #395783; text-align: center;color: white;">
             <img src="./assets/mountain.jpg" style="width: 100%; max-height: 290px;">
             <img src="./assets/kaushik.jpg" id="profile_pic">
             <br>

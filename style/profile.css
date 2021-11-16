@@ -48,7 +48,7 @@
         }
         #friends_bar
         {
-            background-color: white;
+            background-color: #2f3742;
              min-height: 400px;
             color: #aaa;
             padding: 8px;
@@ -81,14 +81,14 @@
             font-size: 14px;
             background-color: #405d9b;
             color: white;
-            
+            position: absolute;
             border-radius: 4px;
 
         }
         #post_bar
         {
             margin-top: 20px;
-            background-color:white;
+            background-color:#395783;
             padding: 10px;
             
         }
