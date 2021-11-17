@@ -104,12 +104,12 @@ else
             <div style="font-size: 20px;"> <?php echo $user_data['fname']." ". $user_data['lname'];  ?></div>
            
             <br>
-            <div id="menu_button">Timeline</div>
+            <div id="menu_button"><a href="timeline.php" style="text-decoration:none; color:white;">Timeline</a> </div>
             <div id="menu_button">About</div>
             <div id="menu_button"> Friends</div>
             <div id="menu_button"> Photos</div>
-            <div id="menu_button"> Settings</div>
-                   
+            <div id="menu_button"> Settings</div>   
+       
         </div>
 
 

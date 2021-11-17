@@ -9,7 +9,7 @@
                 </div>
                 <?php echo $row['post'] ?> 
                 <br><br>
-                <a href="">Like</a> . <a href="">Comment</a> . <span style="color: #aaa;">September 11 2021</span>
+                <a href="">Like</a> . <a href="">Comment</a> . <span style="color: #aaa;"><?php $date= new DateTime($row['date']) ; echo $date->format('d-m-Y');?> </span>
             </div>
         </div>
     
