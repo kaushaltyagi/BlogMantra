@@ -119,10 +119,10 @@ else
             <!-- freinds -->
             <div style="min-height: 400px; flex: 1;">
                 
-                <div id="friends_bar">
+                <div id="friends_bar" style="background-color: white";>
                     Friends<br>
                     
-                    <div id="friends">
+                    <div id="friends" >
                         <img id="friends_img" src="./assets/user_male.jpg">
                         <br>
                         Rishabh Pathak
@@ -163,7 +163,7 @@ else
                     </div>
                     <a href target=""></a>
                     <!-- main post bar -->
-                    <div id="post_bar" style="">
+                    <div id="post_bar" style="background-color: white;">
                 
                         <?php
                             
@@ -183,7 +183,7 @@ else
                         ?>
                     
                     </div>
-            </div>
+            
         </div>
    
    
