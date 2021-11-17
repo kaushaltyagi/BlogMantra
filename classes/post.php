@@ -34,6 +34,21 @@ class post
 
        return $number;
     }
+    public function get_post( $id  )
+    {
+        $query = "select * from posts where userid = '$id' order by id desc limit 10";
+        $DB = new database();
+        $result = $DB->read($query);
+        
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 ?>

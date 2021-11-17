@@ -48,7 +48,7 @@
         }
         #friends_bar
         {
-            background-color: #2f3742;
+            background-color: white;
              min-height: 400px;
             color: #aaa;
             padding: 8px;
@@ -88,7 +88,7 @@
         #post_bar
         {
             margin-top: 20px;
-            background-color:#395783;
+            background-color:#ffffff;
             padding: 10px;
             
         }

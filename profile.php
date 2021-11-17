@@ -47,7 +47,25 @@ else
 
         $result = $post->create_post( $id , $_POST );
 
+        if($result == "")
+        {
+            header("Location:profile.php");
+            die;
+        }
+        else
+        {
+            echo "<div style ='text-align:center;font-size:12px;color:white;background-color:grey'>";
+            echo "FOLLOWING ERRORS OCURED <br>";
+            echo $result;
+            echo "</div>";
+        }
     }
+
+    // collect post
+
+    $post = new post();
+    $id = $_SESSION['blog_userid'];
+    $posts = $post->get_post( $id  );
 
 
 ?>
@@ -80,7 +98,7 @@ else
     <div id="cover_area" >
 
         <div style="background-color: #395783; text-align: center;color: white;">
-            <img src="./assets/mountain.jpg" style="width: 100%; max-height: 290px;">
+            <img src="./assets/treecover.jpg" style="width: 100%; max-height: 290px;">
             <img src="./assets/kaushik.jpg" id="profile_pic">
             <br>
             <div style="font-size: 20px;"> <?php echo $user_data['fname']." ". $user_data['lname'];  ?></div>
@@ -105,25 +123,25 @@ else
                     Friends<br>
                     
                     <div id="friends">
-                        <img id="friends_img" src="./assets/user1.jpg">
+                        <img id="friends_img" src="./assets/user_male.jpg">
                         <br>
                         Rishabh Pathak
                     </div>
                     
                     <div id="friends">
-                        <img id="friends_img" src="./assets/user2.jpg">
+                        <img id="friends_img" src="./assets/user_female.jpg">
                         <br>
                         Kaushal Tyagi
                     </div>
 
                     <div id="friends">
-                        <img id="friends_img" src="./assets/user3.jpg">
+                        <img id="friends_img" src="./assets/user_male.jpg">
                         <br>
                         Harsh
                     </div>
 
                     <div id="friends">
-                        <img id="friends_img" src="./assets/user4.jpg">
+                        <img id="friends_img" src="./assets/user_female.jpg">
                         <br>
                         Nitin
                     </div>
@@ -147,33 +165,22 @@ else
                     <!-- main post bar -->
                     <div id="post_bar" style="">
                 
-                       <!-- post--1 -->
-                        <div id="post">
-                            <div>
-                               <img src="./assets/user2.jpg" style="width: 70px; margin-right: 8px;">
-                            </div>
-                            <div>
-                                <div style="font-weight: bold; color: #405d9b;">Kaushal Tyagi</div>
-                                An operating system, whether it's MacOS on your MacBook or Google's Wear OS on your smartwatch, gets better the more transparent it is to the user. And that user is you, sitting in front of a laptop keyboard or tapping on a phone screen. So sorry, no Spinal Tap "goes to 11" puns here. That's mostly because Windows 11 feels more like Windows 10.5 than a generational leap -- not that there's really anything wrong with that. 
-                                <br><br>
-                                <a href="">Like</a> . <a href="">Comment</a> . <span style="color: #aaa;">September 11 2021</span>
-                            </div>
-                        </div>
-                    
-                    
-                         <!-- post--2 -->
-                         <div id="post">
-                            <div>
-                               <img src="./assets/user3.jpg" style="width: 70px; margin-right: 8px;">
-                            </div>
-                            <div>
-                                <div style="font-weight: bold; color: #405d9b;">Harsh Srivastava</div>
-                                Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese. The company is owned by the Volkswagen Group through its subsidiary Audi.
-                                <br><br>
-                                <a href="">Like</a> . <a href="">Comment</a> . <span style="color: #aaa;">April 20 2021</span>
-                            </div>
-                        </div>
-                    
+                        <?php
+                            
+                           
+
+                            if($posts)
+                            {
+                                foreach ($posts as $row)
+                                {
+                                    $user = new user();
+                                    $row_user = $user->get_user($row['userid']);
+                                    include("post.php");
+                                }
+                            }
+                        
+                        
+                        ?>
                     
                     </div>
             </div>
