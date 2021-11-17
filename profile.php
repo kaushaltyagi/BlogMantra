@@ -67,7 +67,11 @@ else
     $id = $_SESSION['blog_userid'];
     $posts = $post->get_post( $id  );
 
-
+    // collect friends
+    
+    $user = new user();
+    $id = $_SESSION['blog_userid'];
+    $friends = $user->get_friends( $id  );
 ?>
 
 <!DOCTYPE html>
@@ -121,30 +125,19 @@ else
                 
                 <div id="friends_bar" style="background-color: white";>
                     Friends<br>
-                    
-                    <div id="friends" >
-                        <img id="friends_img" src="./assets/user_male.jpg">
-                        <br>
-                        Rishabh Pathak
-                    </div>
-                    
-                    <div id="friends">
-                        <img id="friends_img" src="./assets/user_female.jpg">
-                        <br>
-                        Kaushal Tyagi
-                    </div>
 
-                    <div id="friends">
-                        <img id="friends_img" src="./assets/user_male.jpg">
-                        <br>
-                        Harsh
-                    </div>
-
-                    <div id="friends">
-                        <img id="friends_img" src="./assets/user_female.jpg">
-                        <br>
-                        Nitin
-                    </div>
+                    <?php
+                        if($friends)
+                            {
+                                foreach ($friends as $friends_row)
+                                {
+                                    
+                                    include("user.php");
+                                }
+                            }
+                        
+                        
+                        ?>
                 </div>
             
 

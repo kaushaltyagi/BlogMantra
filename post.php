@@ -1,7 +1,18 @@
 
 <div id="post" style="background-color: white";>
-    <div>
-        <img src="./assets/kaushik.jpg" style="width: 70px; margin-right: 8px;">
+    <div> 
+        <?php 
+        $image = "";
+        if($row_user['gender']=="male") 
+        {
+            $image="./assets/user_male.jpg";
+        } 
+        else if($row_user['gender']=="female") 
+        {
+            $image="./assets/user_female.jpg";
+        } 
+?>
+        <img src="<?php echo $image; ?>" style="width: 70px; margin-right: 8px;">
         </div>
             <div>
                 <div style="font-weight: bold; color: #405d9b;">
@@ -13,3 +24,4 @@
             </div>
         </div>
     
+       

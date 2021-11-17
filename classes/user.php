@@ -37,6 +37,22 @@ class User
             return false;
         }
     }
+
+    public function get_friends( $id  )
+    {
+        $DB = new database();
+        $query = "select * from users where userid !='$id' ";
+        $result = $DB ->read($query);
+
+        if($result)
+        {
+            return $result;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 ?>
