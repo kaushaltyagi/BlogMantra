@@ -147,7 +147,7 @@ else
             <!-- posts -->
                 <!-- write something here -->
             <div style="min-height: 400px; flex:2.5;padding: 20px; padding-right: 0px;">
-                    <div style="background-color: white; border: solid 1px #aaa; padding: 10px;">
+                    <div style=" ;background-color: white; border: solid 1px #aaa; padding: 10px;">
                         <form  method="post">
                             <textarea name = "post" placeholder = "Do You Wanna Share Something?"></textarea>
                             <input id="post_button" value="Post" type="submit" >
