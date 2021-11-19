@@ -66,7 +66,29 @@ $user_data = $login->check_login($_SESSION['blog_userid']);
         <div style="background-color: #395783; text-align: center;color: white;">
             <img src="./assets/treecover.jpg" style="width: 100%; max-height: 290px;">
             <span style="font-size:12px">  
-                <img src="./assets/kaushik.jpg" id="profile_pic">
+
+            <?php
+            $image = "";
+            if(file_exists($user_data['profile_image']))
+            {
+                $image = $user_data['profile_image'];
+            }
+            else
+            {
+                if($user_data['gender']=="male") 
+                {
+                    $image="./assets/user_male.jpg";
+                } 
+                else if($user_data['gender']=="female") 
+                {
+                    $image="./assets/user_female.jpg";
+                }  
+            }
+            ?>
+
+
+
+                <img src="<?php echo $image; ?>" id="profile_pic">
                 <br>    
                 <a href="change_pimage.php" style= "text-decoration:none; color:black;"> Change Image</a>
             </span>

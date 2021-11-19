@@ -14,8 +14,39 @@ $user_data = $login->check_login($_SESSION['blog_userid']);
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    print_r($_POST);
-    print_r($_FILES);
+    if($_FILES['file']['type'] == "image/jpeg" || $_FILES['file']['type'] == "image/png" || $_FILES['file']['type'] == "image/jpg")
+    {
+        if(isset($_FILES['file']['name']) && $_FILES['file']['tmp_name'] != "")
+        {
+
+            $filename = "uploads/".  $_FILES['file']['name'];
+            move_uploaded_file($_FILES['file']['tmp_name'],$filename);
+            
+            if(file_exists($filename))
+            { 
+                $userid = $user_data['userid'];
+                $query ="update users set profile_image = '$filename' where userid = '$userid' limit 1";
+                $db = new database();
+                $db -> save($query);
+
+                 header("Location:profile.php");
+                 die;
+            }
+        }
+        else
+        {
+                echo "<div style ='text-align:center;font-size:12px;color:white;background-color:grey'>";
+                echo "ADD A VALID IMAGE";
+                echo "</div>";
+        }
+    }
+    else
+    {
+        echo "<div style ='text-align:center;font-size:12px;color:white;background-color:grey'>";
+        echo "NOT A VALID FORMAT";
+        echo "</div>";
+    }
+
 }
 ?>
 
@@ -52,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                     <form method="post" enctype="multipart/form-data">
                         <input type="file" name="file">
 
-                        <input id="post_button" value="Post" type="submit" >
+                        <input id="post_button" value="CHANGE" type="submit" style="width:130px">
                         <br>
                     </form>
                 </div>       

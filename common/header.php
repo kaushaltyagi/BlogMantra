@@ -1,3 +1,6 @@
+
+<!-- its a blue bar header -->
+
 <div id="blue_bar">
         <div style="width: 800px;margin:auto; font-size:30px;">
             <a href="index.php" style="text-decoration:none; color:white;">Blog-Mantra </a>
