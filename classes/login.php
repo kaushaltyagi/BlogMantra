@@ -40,21 +40,34 @@ class login
         
     }
 
-    public function check_login($userid)
-    {
-        $query = "select userid from users where userid = '$userid' limit 1";
-        
-       
-        $DB= new database();
-        $result = $DB->read($query);
-
-        if($result)
+    public function check_login($id)
+    { 
+        if ( is_numeric($id))
         {
-            return true;
-        }
+            $query = "select * from users where userid = '$id' limit 1";
+            
         
-        return false;
+            $DB= new database();
+            $result = $DB->read($query);
+
+            if($result)
+            {
+                $user_data =$result[0];
+                return $user_data;
+            }
+            else
+            {
+                header ("Location:login.php");
+                die; 
+            }        
+        }
+        else
+        {
+            header ("Location:login.php");
+                die;
+        }
     }
+
 }
 
 ?>

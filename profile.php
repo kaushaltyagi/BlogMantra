@@ -6,37 +6,10 @@ include ("classes/login.php");
 include ("classes/user.php");
 include ("classes/post.php");
 
-if (isset($_SESSION['blog_userid']) && is_numeric($_SESSION['blog_userid']))
-{
-    $id = $_SESSION['blog_userid'];
-    $login = new login();
-    $result = $login->check_login($id);
-
-    if ($result)
-    {
-        $user = new User();
-        $user_data = $user -> get_data($id);
-
-        if(!$user_data)
-        {
-            header ("Location:login.php");
-            die; 
-        }
-        
-    }
-    else
-    {
-       header ("Location:login.php");
-        die; 
-    }
-}
-else
-{
-    header ("Location:login.php");
-        die;
-}
 
 
+$login = new login();
+$user_data = $login->check_login($_SESSION['blog_userid']);
 
             // below this we have code for possting
     
@@ -84,18 +57,7 @@ else
     
     <!-- top bar -->
    
-    <div id="blue_bar">
-        <div style="width: 800px;margin:auto; font-size:30px;">
-            Blog-Mantra &nbsp; &nbsp; 
-            <input type="text" id="search_box" placeholder="Search for Writers">
-            
-            <img src="./assets/kaushik.jpg" style="width: 50px;float: right; border-radius: 50px;">
-            
-            <a href ="logout.php">
-                <span style="color:white; font-size:12px; float:right; margin:18px;">  Logout</span>
-            </a>
-        </div>
-    </div>
+  <?php include("common/header.php");?>
 
     <!-- cover page -->
 
@@ -103,12 +65,16 @@ else
 
         <div style="background-color: #395783; text-align: center;color: white;">
             <img src="./assets/treecover.jpg" style="width: 100%; max-height: 290px;">
-            <img src="./assets/kaushik.jpg" id="profile_pic">
+            <span style="font-size:12px">  
+                <img src="./assets/kaushik.jpg" id="profile_pic">
+                <br>    
+                <a href="change_pimage.php" style= "text-decoration:none; color:black;"> Change Image</a>
+            </span>
             <br>
-            <div style="font-size: 20px;"> <?php echo $user_data['fname']." ". $user_data['lname'];  ?></div>
+            <div style="font-size: 30px;"> <?php echo $user_data['fname']." ". $user_data['lname'];  ?></div>
            
             <br>
-            <div id="menu_button"><a href="timeline.php" style="text-decoration:none; color:white;">Timeline</a> </div>
+           <a href="index.php" style="text-decoration:none; color:white;"> <div id="menu_button">Timeline </div></a>
             <div id="menu_button">About</div>
             <div id="menu_button"> Friends</div>
             <div id="menu_button"> Photos</div>

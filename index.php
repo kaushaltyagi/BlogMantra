@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+include ("classes/connect.php");
+include ("classes/login.php");
+include ("classes/user.php");
+include ("classes/post.php");
+
+
+
+$login = new login();
+$user_data = $login->check_login($_SESSION['blog_userid']);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +25,7 @@
     
     <!-- top bar -->
    
-    <div id="blue_bar">
-        <div style="width: 800px;margin:auto; font-size:30px;">
-            Blog-Mantra &nbsp; &nbsp; 
-            <input type="text" id="search_box" placeholder="Search for Writers">
-            
-            <img src="./assets/kaushik.jpg" style="width: 50px;float: right; border-radius: 50px;">
-            <a href ="logout.php">
-                <span style="color:white; font-size:12px; float:right; margin:18px;">  Logout</span>
-            </a>
-        </div>
-    </div>
+    <?php include("common/header.php");?>
 
     <!-- cover page -->
 
@@ -36,7 +42,7 @@
                 
                 <div id="friends_bar">
                   <img src="./assets/kaushik.jpg" id="profile_pic">
-                   <p>Kaushik Kumar Giri</p> 
+                   <a href="profile.php" style="text-decoration:none; color:white;"> <?php echo $user_data['fname']."<br> ".$user_data['lname']; ?> </a>
                 </div>
             
 
